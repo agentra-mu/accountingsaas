@@ -1,0 +1,7 @@
+node_modules
+.next
+out
+.env*.local
+data/waitlist.json
+npm-debug.log*
+.DS_Store
