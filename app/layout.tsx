@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import { Fraunces, IBM_Plex_Mono, Inter } from "next/font/google";
-import { WaitlistProvider } from "@/components/waitlist/WaitlistContext";
-import WaitlistModal from "@/components/waitlist/WaitlistModal";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -39,10 +37,7 @@ export default function RootLayout({
         className={`${fraunces.variable} ${plexMono.variable} ${inter.variable}`}
         style={{ fontFamily: "var(--font-sans)" }}
       >
-        <WaitlistProvider>
-          {children}
-          <WaitlistModal />
-        </WaitlistProvider>
+        {children}
       </body>
     </html>
   );
