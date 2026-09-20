@@ -70,7 +70,7 @@
 
   /* Accent — the single source of truth for buttons, links, highlights
      and active states. Change this to re-theme the whole site. */
-  --accent: #10b981; /* emerald-500 */
+  --accent: #004d24;
   --accent-foreground: #ffffff;
 
   --destructive: var(--stamp-red);
