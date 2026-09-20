@@ -1,3 +1,6 @@
+import { BlurFade } from "@/components/velora/blur-fade";
+import { TracingBeam } from "@/components/velora/tracing-beam";
+
 const steps = [
   {
     num: "01",
@@ -28,20 +31,26 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="page-section" id="how-it-works">
-      <p className="kicker">How it works</p>
-      <h2>Built around the request you already send today — just followed through.</h2>
-      <div className="steps">
-        {steps.map((step) => (
-          <div className="step" key={step.num}>
-            <span className="num">{step.num}</span>
-            <div>
-              <h3>{step.title}</h3>
-              <p>{step.body}</p>
-            </div>
-          </div>
-        ))}
-      </div>
+    <section className="border-t border-rule py-18" id="how-it-works">
+      <p className="mb-3 font-mono text-[13px] text-kraft">How it works</p>
+      <h2 className="mb-10 max-w-[22ch] font-serif text-[26px] font-medium tracking-tight sm:text-[34px]">
+        Built around the request you already send today — just followed through.
+      </h2>
+      <TracingBeam className="ml-6 md:ml-8">
+        <div className="rounded-[4px] border border-rule bg-paper-raised">
+          {steps.map((step, i) => (
+            <BlurFade key={step.num} delay={i * 0.06} offset={10}>
+              <div className="grid grid-cols-[48px_1fr] gap-5 border-b border-rule px-6 py-6 last:border-b-0 sm:grid-cols-[64px_1fr]">
+                <span className="pt-0.5 font-mono text-[13px] text-kraft">{step.num}</span>
+                <div>
+                  <h3 className="mb-1.5 font-sans text-[17px] font-semibold">{step.title}</h3>
+                  <p className="max-w-[56ch] text-[15px] leading-relaxed text-ink-soft">{step.body}</p>
+                </div>
+              </div>
+            </BlurFade>
+          ))}
+        </div>
+      </TracingBeam>
     </section>
   );
 }
