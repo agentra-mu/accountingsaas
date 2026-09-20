@@ -45,6 +45,7 @@
   --animate-marquee: marquee var(--duration, 40s) linear infinite;
   --animate-marquee-vertical: marquee-vertical var(--duration, 40s) linear infinite;
   --animate-ripple-ring: ripple-ring 3s ease-out infinite;
+  --animate-shimmer: shimmer 2.5s linear infinite;
 }
 
 :root {
@@ -121,10 +122,20 @@
   }
 }
 
+@keyframes shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-marquee,
   .animate-marquee-vertical,
-  .animate-ripple-ring {
+  .animate-ripple-ring,
+  .animate-shimmer {
     animation: none;
   }
 }

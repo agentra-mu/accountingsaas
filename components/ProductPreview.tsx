@@ -1,5 +1,6 @@
 import Ledger, { type LedgerEntry } from "@/components/Ledger";
 import { ContainerScroll } from "@/components/velora/container-scroll";
+import { BlurFade } from "@/components/velora/blur-fade";
 
 const previewEntries: LedgerEntry[] = [
   { client: "Alvarez & Co.", date: "Sept 1", status: "complete", statusLabel: "Complete" },
@@ -12,15 +13,15 @@ const previewEntries: LedgerEntry[] = [
 
 export default function ProductPreview() {
   return (
-    <section className="page-section overflow-visible border-t border-rule py-18">
+    <section className="mx-auto max-w-6xl px-6 py-24 lg:px-8 lg:py-32">
       <ContainerScroll
         header={
-          <>
-            <p className="mb-3 font-mono text-[13px] text-kraft">One dashboard</p>
-            <h2 className="mx-auto max-w-[24ch] font-serif text-[26px] font-medium tracking-tight sm:text-[34px]">
+          <BlurFade>
+            <p className="font-mono text-[13px] text-kraft">One dashboard</p>
+            <h2 className="mx-auto mt-3 max-w-xl font-serif text-3xl font-medium tracking-tight sm:text-4xl">
               Everything you&apos;re owed, at a glance.
             </h2>
-          </>
+          </BlurFade>
         }
       >
         <div className="p-6 sm:p-10">

@@ -31,26 +31,31 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="border-t border-rule py-18" id="how-it-works">
-      <p className="mb-3 font-mono text-[13px] text-kraft">How it works</p>
-      <h2 className="mb-10 max-w-[22ch] font-serif text-[26px] font-medium tracking-tight sm:text-[34px]">
-        Built around the request you already send today — just followed through.
-      </h2>
-      <TracingBeam className="ml-6 md:ml-8">
-        <div className="rounded-[4px] border border-rule bg-paper-raised">
-          {steps.map((step, i) => (
-            <BlurFade key={step.num} delay={i * 0.06} offset={10}>
-              <div className="grid grid-cols-[48px_1fr] gap-5 border-b border-rule px-6 py-6 last:border-b-0 sm:grid-cols-[64px_1fr]">
-                <span className="pt-0.5 font-mono text-[13px] text-kraft">{step.num}</span>
-                <div>
-                  <h3 className="mb-1.5 font-sans text-[17px] font-semibold">{step.title}</h3>
-                  <p className="max-w-[56ch] text-[15px] leading-relaxed text-ink-soft">{step.body}</p>
+    <section id="how-it-works" className="border-t border-rule">
+      <div className="mx-auto max-w-6xl px-6 py-24 lg:px-8 lg:py-32">
+        <BlurFade>
+          <p className="font-mono text-[13px] text-kraft">How it works</p>
+          <h2 className="mt-3 max-w-xl font-serif text-3xl font-medium tracking-tight sm:text-4xl">
+            Built around the request you already send today — just followed through.
+          </h2>
+        </BlurFade>
+
+        <TracingBeam className="mt-16 ml-6 max-w-2xl md:ml-8">
+          <div className="space-y-10">
+            {steps.map((step, i) => (
+              <BlurFade key={step.num} delay={i * 0.06} offset={10}>
+                <div className="grid grid-cols-[48px_1fr] gap-5">
+                  <span className="pt-0.5 font-mono text-[13px] text-kraft">{step.num}</span>
+                  <div>
+                    <h3 className="mb-1.5 font-sans text-[17px] font-semibold">{step.title}</h3>
+                    <p className="max-w-[52ch] text-[15px] leading-relaxed text-ink-soft">{step.body}</p>
+                  </div>
                 </div>
-              </div>
-            </BlurFade>
-          ))}
-        </div>
-      </TracingBeam>
+              </BlurFade>
+            ))}
+          </div>
+        </TracingBeam>
+      </div>
     </section>
   );
 }

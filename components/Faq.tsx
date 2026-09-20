@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { BlurFade } from "@/components/velora/blur-fade";
 
 const faqs = [
   {
@@ -26,19 +27,26 @@ const faqs = [
 
 export default function Faq() {
   return (
-    <section className="border-t border-rule py-18">
-      <p className="mb-3 font-mono text-[13px] text-kraft">Questions</p>
-      <h2 className="mb-10 max-w-[22ch] font-serif text-[26px] font-medium tracking-tight sm:text-[34px]">
-        Before you send your first request.
-      </h2>
-      <Accordion type="single" collapsible className="rounded-[4px] border border-rule bg-paper-raised px-6">
-        {faqs.map((item) => (
-          <AccordionItem key={item.q} value={item.q}>
-            <AccordionTrigger className="font-sans text-[15px]">{item.q}</AccordionTrigger>
-            <AccordionContent className="text-[15px]">{item.a}</AccordionContent>
-          </AccordionItem>
-        ))}
-      </Accordion>
+    <section id="faq" className="border-t border-rule">
+      <div className="mx-auto max-w-3xl px-6 py-24 lg:px-8 lg:py-32">
+        <BlurFade>
+          <p className="text-center font-mono text-[13px] text-kraft">Questions</p>
+          <h2 className="mx-auto mt-3 text-center font-serif text-3xl font-medium tracking-tight sm:text-4xl">
+            Before you send your first request.
+          </h2>
+        </BlurFade>
+
+        <BlurFade delay={0.12}>
+          <Accordion type="single" collapsible className="mt-14">
+            {faqs.map((item) => (
+              <AccordionItem key={item.q} value={item.q}>
+                <AccordionTrigger className="font-sans text-[15px]">{item.q}</AccordionTrigger>
+                <AccordionContent className="text-[15px]">{item.a}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </BlurFade>
+      </div>
     </section>
   );
 }
