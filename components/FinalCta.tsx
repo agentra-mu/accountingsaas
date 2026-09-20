@@ -16,13 +16,13 @@ export default function FinalCta() {
               className="opacity-40 [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,black,transparent)]"
             />
             <div className="relative">
-              <p className="font-mono text-[13px] text-kraft">Get started</p>
+              <p className="font-mono text-[13px] text-accent">Get started</p>
               <h2 className="mx-auto mt-3 max-w-md font-serif text-3xl font-medium tracking-tight sm:text-4xl">
                 Send your first request in under five minutes.
               </h2>
               <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-ink-soft">
                 No setup call, no client training. Write what you need, send
-                the link, and let Docket do the following up.
+                the link, and let Finly do the following up.
               </p>
               <div className="mt-8 flex justify-center">
                 <CtaButton>Get started free</CtaButton>

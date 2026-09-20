@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Fraunces, IBM_Plex_Mono, Inter } from "next/font/google";
 import { ScrollProgress } from "@/components/velora/scroll-progress";
+import SplashGate from "@/components/SplashGate";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -22,9 +23,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Docket — Stop chasing clients for documents",
+  title: "Finly — Stop chasing clients for documents",
   description:
-    "Send one link. Docket reads what comes back, checks it against what you asked for, and chases anything missing — so you don't have to.",
+    "Send one link. Finly reads what comes back, checks it against what you asked for, and chases anything missing — so you don't have to.",
 };
 
 export default function RootLayout({
@@ -36,7 +37,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${fraunces.variable} ${plexMono.variable} ${inter.variable}`}>
         <ScrollProgress />
-        {children}
+        <SplashGate>{children}</SplashGate>
       </body>
     </html>
   );

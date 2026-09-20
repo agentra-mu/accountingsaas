@@ -22,7 +22,7 @@ export default function Hero() {
       <div className="relative mx-auto max-w-6xl px-6 text-center lg:px-8">
         <BlurFade delay={0} direction="down">
           <span className="inline-flex items-center gap-2 rounded-full border border-rule bg-paper-raised/80 px-4 py-1.5 font-mono text-[13px] text-ink-soft backdrop-blur">
-            <span className="size-1.5 rounded-full bg-kraft" />
+            <span className="size-1.5 rounded-full bg-accent" />
             Built for accounting firms, not client portals
           </span>
         </BlurFade>
@@ -35,7 +35,7 @@ export default function Hero() {
 
         <BlurFade delay={0.24}>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-ink-soft">
-            Send one link. Docket reads what comes back, checks it against
+            Send one link. Finly reads what comes back, checks it against
             what you asked for, and chases anything missing — so you
             don&apos;t have to.
           </p>

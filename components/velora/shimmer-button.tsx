@@ -10,7 +10,7 @@ export function ShimmerButton({ className, children, ...props }: ShimmerButtonPr
     <button
       data-slot="shimmer-button"
       className={cn(
-        "group relative inline-flex h-11 cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-full bg-ink px-6 font-sans text-sm font-semibold text-paper shadow-lg shadow-ink/20 transition-[transform,box-shadow] duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-ink/25 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-kraft active:scale-[0.98]",
+        "group relative inline-flex h-11 cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-full bg-accent px-6 font-sans text-sm font-semibold text-accent-foreground shadow-lg shadow-accent/25 transition-[transform,box-shadow] duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-accent/30 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent active:scale-[0.98]",
         className
       )}
       {...props}

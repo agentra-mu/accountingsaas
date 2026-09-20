@@ -21,7 +21,7 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
 
-  /* Docket palette, exposed as first-class Tailwind colors */
+  /* Finly palette, exposed as first-class Tailwind colors */
   --color-paper: var(--paper);
   --color-paper-raised: var(--paper-raised);
   --color-ink: var(--ink);
@@ -64,16 +64,20 @@
   --card-foreground: var(--ink);
   --border: var(--rule);
   --input: var(--rule);
-  --ring: var(--kraft);
+  --ring: var(--accent);
   --muted: var(--paper-raised);
   --muted-foreground: var(--ink-soft);
-  --accent: var(--paper-raised);
-  --accent-foreground: var(--ink);
+
+  /* Accent — the single source of truth for buttons, links, highlights
+     and active states. Change this to re-theme the whole site. */
+  --accent: #10b981; /* emerald-500 */
+  --accent-foreground: #ffffff;
+
   --destructive: var(--stamp-red);
 
-  --brand: var(--kraft);
-  --brand-foreground: var(--paper);
-  --brand-from: var(--kraft);
+  --brand: var(--accent);
+  --brand-foreground: var(--accent-foreground);
+  --brand-from: var(--accent);
   --brand-via: var(--ink);
   --brand-to: var(--stamp-green);
 

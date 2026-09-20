@@ -1,4 +1,4 @@
-import { CheckIcon, InboxIcon, LayoutDashboardIcon, ShieldOffIcon } from "lucide-react";
+import { CheckIcon, InboxIcon, LayoutDashboardIcon, ScanTextIcon, ShieldOffIcon, SparklesIcon } from "lucide-react";
 
 import { BentoCard, BentoGrid } from "@/components/velora/bento-grid";
 import { BorderBeam } from "@/components/velora/border-beam";
@@ -22,11 +22,23 @@ const reminders = [
   "Flagged overdue — day 7",
 ];
 
-export default function WhyDocket() {
+const classifications = [
+  { file: "statement_sept.pdf", label: "Bank statement" },
+  { file: "inv_0921.pdf", label: "Invoice" },
+  { file: "payroll_q3.pdf", label: "Payroll report" },
+];
+
+const extracted = [
+  { field: "Date", value: "Sept 1, 2026" },
+  { field: "Amount", value: "$12,450.00" },
+  { field: "Account", value: "•••• 4821" },
+];
+
+export default function WhyFinly() {
   return (
-    <section id="why-docket" className="mx-auto max-w-6xl px-6 py-24 lg:px-8 lg:py-32">
+    <section id="why-finly" className="mx-auto max-w-6xl px-6 py-24 lg:px-8 lg:py-32">
       <BlurFade>
-        <p className="text-center font-mono text-[13px] text-kraft">Why firms switch</p>
+        <p className="text-center font-mono text-[13px] text-accent">Why firms switch</p>
         <h2 className="mx-auto mt-3 max-w-xl text-center font-serif text-3xl font-medium tracking-tight sm:text-4xl">
           The part of the job nobody bills for, finally off your plate.
         </h2>
@@ -111,6 +123,51 @@ export default function WhyDocket() {
                 <span className="font-serif text-6xl font-medium text-ink/10">
                   <NumberTicker value={1} />
                 </span>
+              </div>
+            }
+          />
+
+          <BentoCard
+            name="AI Document Reading"
+            description="AI reads each upload and automatically classifies it — bank statement, invoice, payroll report."
+            className="md:col-span-2"
+            icon={<ScanTextIcon />}
+            background={
+              <div className="absolute inset-x-8 top-6 overflow-hidden rounded-md border border-rule bg-paper/90">
+                <BorderBeam size={56} duration={8} reverse />
+                <div className="p-4">
+                  {classifications.map((row) => (
+                    <div
+                      key={row.file}
+                      className="flex items-center justify-between gap-3 border-b border-rule py-2.5 font-mono text-[13px] last:border-b-0"
+                    >
+                      <span className="truncate text-ink-soft">{row.file}</span>
+                      <span className="whitespace-nowrap rounded-full border border-accent/30 bg-accent/10 px-2.5 py-0.5 text-accent">
+                        {row.label}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            }
+          />
+
+          <BentoCard
+            name="Smart Data Extraction"
+            description="Key dates, amounts, and account numbers pulled straight from the document — no digging through files."
+            className="md:col-span-1"
+            icon={<SparklesIcon />}
+            background={
+              <div className="absolute inset-x-6 top-6 overflow-hidden rounded-md border border-rule bg-paper/90 p-4">
+                {extracted.map((row) => (
+                  <div
+                    key={row.field}
+                    className="flex items-center justify-between border-b border-rule py-2 font-mono text-[12px] last:border-b-0"
+                  >
+                    <span className="text-ink-soft">{row.field}</span>
+                    <span className="text-ink">{row.value}</span>
+                  </div>
+                ))}
               </div>
             }
           />

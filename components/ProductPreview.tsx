@@ -17,7 +17,7 @@ export default function ProductPreview() {
       <ContainerScroll
         header={
           <BlurFade>
-            <p className="font-mono text-[13px] text-kraft">One dashboard</p>
+            <p className="font-mono text-[13px] text-accent">One dashboard</p>
             <h2 className="mx-auto mt-3 max-w-xl font-serif text-3xl font-medium tracking-tight sm:text-4xl">
               Everything you&apos;re owed, at a glance.
             </h2>

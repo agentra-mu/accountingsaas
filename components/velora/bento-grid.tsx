@@ -44,7 +44,7 @@ export function BentoCard({ name, description, background, icon, className, ...p
         className="pointer-events-none absolute inset-0 bg-gradient-to-t from-paper-raised via-paper-raised/70 to-transparent"
       />
       <div className="pointer-events-none relative z-10 flex flex-col gap-1 p-6">
-        {icon && <div className="mb-2 w-fit text-kraft [&_svg]:size-7">{icon}</div>}
+        {icon && <div className="mb-2 w-fit text-accent [&_svg]:size-7">{icon}</div>}
         <h3 className="font-sans text-lg font-semibold text-ink">{name}</h3>
         <p className="text-sm text-ink-soft">{description}</p>
       </div>

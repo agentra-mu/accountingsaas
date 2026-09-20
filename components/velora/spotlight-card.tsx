@@ -15,7 +15,7 @@ export function SpotlightCard({
   children,
   className,
   radius = 280,
-  color = "color-mix(in oklab, var(--kraft) 16%, transparent)",
+  color = "color-mix(in oklab, var(--accent) 16%, transparent)",
   ...props
 }: SpotlightCardProps) {
   const ref = useRef<HTMLDivElement>(null);
