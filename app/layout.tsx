@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Fraunces, IBM_Plex_Mono, Inter } from "next/font/google";
 import { ScrollProgress } from "@/components/velora/scroll-progress";
-import SplashGate from "@/components/SplashGate";
+import Splash from "@/components/Splash";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -37,7 +37,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${fraunces.variable} ${plexMono.variable} ${inter.variable}`}>
         <ScrollProgress />
-        <SplashGate>{children}</SplashGate>
+        <Splash>{children}</Splash>
       </body>
     </html>
   );

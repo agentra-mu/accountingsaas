@@ -1,8 +1,9 @@
 "use client";
 
-import { motion, useReducedMotion, useScroll, useSpring } from "motion/react";
+import { motion, useScroll, useSpring } from "motion/react";
 
 import { cn } from "@/lib/utils";
+import { useSafeReducedMotion } from "@/lib/use-reduced-motion";
 
 interface ScrollProgressProps {
   className?: string;
@@ -16,7 +17,7 @@ export function ScrollProgress({ className }: ScrollProgressProps) {
     damping: 32,
     restDelta: 0.001,
   });
-  const reducedMotion = useReducedMotion();
+  const reducedMotion = useSafeReducedMotion();
 
   return (
     <motion.div
